@@ -29,7 +29,7 @@ export default function About() {
       <div className='bg-white p-10 md:p-40'>
         <div className='flex flex-col items-start md:flex-row xl:items-center'>
           <h1 className='mb-4 text-3xl font-bold md:absolute md:mr-20 md:text-4xl'>
-            Who we are
+            Who are we?
           </h1>
           <p className='text-bold md:ml-56'>
             We are a team of professionals with a vision to transform the

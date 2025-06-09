@@ -46,7 +46,7 @@ const ContactPage: FC = () => {
           <div className='hidden flex-col gap-10 md:ml-20 md:w-[550px] lg:block xl:ml-72 xl:w-5/6'>
             <div className='mb-20'>
               <h1 className='text-7xl font-extrabold'>Let&apos;s Talk</h1>
-              <p className='text-md mt-10 font-normal text-gray-600'>
+              <p className='mt-10 text-lg font-normal text-gray-600'>
                 Your success is our success.{' '}
                 <span className='text-primary'>
                   We are committed to delivering innovative solutions and
@@ -56,15 +56,15 @@ const ContactPage: FC = () => {
               </p>
             </div>
             <div className='flex flex-col gap-3'>
-              <h2 className='mb-5 text-lg font-bold'>Socials</h2>
-              <ul className='font-regular flex flex-row items-center gap-10 text-sm'>
+              <h2 className='mb-5 text-2xl font-bold'>Socials</h2>
+              <ul className='font-regular flex flex-row items-center gap-10 text-lg'>
                 <li className='hover:text-primary'>
                   <a
                     href='https://x.com/saeternus_'
                     target='_blank'
                     className='flex items-center gap-1'
                   >
-                    <FontAwesomeIcon className='h-5 w-5' icon={faXTwitter} />
+                    <FontAwesomeIcon className='h-7 w-7' icon={faXTwitter} />
                     Twitter
                   </a>
                 </li>
@@ -74,7 +74,7 @@ const ContactPage: FC = () => {
                     target='_blank'
                     className='flex items-center gap-1'
                   >
-                    <FontAwesomeIcon className='h-5 w-5' icon={faInstagram} />
+                    <FontAwesomeIcon className='h-7 w-7' icon={faInstagram} />
                     Instagram
                   </a>
                 </li>
@@ -84,7 +84,7 @@ const ContactPage: FC = () => {
                     target='_blank'
                     className='flex items-center gap-1'
                   >
-                    <FontAwesomeIcon className='h-5 w-5' icon={faLinkedin} />
+                    <FontAwesomeIcon className='h-7 w-7' icon={faLinkedin} />
                     Linkedin
                   </a>
                 </li>
@@ -94,37 +94,37 @@ const ContactPage: FC = () => {
                     target='_blank'
                     className='flex items-center gap-1'
                   >
-                    <FontAwesomeIcon className='h-5 w-5' icon={faFacebook} />
+                    <FontAwesomeIcon className='h-7 w-7' icon={faFacebook} />
                     Facebook
                   </a>
                 </li>
               </ul>
             </div>
-            <div className='mt-36 text-xs font-semibold'>
-              <ul className='flex flex-row gap-20'>
+            <div className='mt-36 text-base font-semibold'>
+              <ul className='flex flex-row gap-10'>
                 <li className='flex items-center justify-center gap-1'>
-                  <FontAwesomeIcon className='h-5 w-5' icon={faEnvelope} />
+                  <FontAwesomeIcon className='h-6 w-6' icon={faEnvelope} />
                   hello@saeternus.com
                 </li>
-                <li className='flex w-full items-center justify-center gap-2 break-normal'>
-                  <FontAwesomeIcon className='h-5 w-5' icon={faPhone} />
+                <li className='flex w-full items-center justify-center gap-1 break-normal'>
+                  <FontAwesomeIcon className='h-6 w-6' icon={faPhone} />
                   +91 8004916849
                 </li>
-                <li className='flex w-full items-center justify-center gap-2'>
-                  <FontAwesomeIcon className='h-5 w-5' icon={faLocationDot} />
-                  B-201, IBITF Office,
-                  <br /> IIT Bhilai, Sejbahar, Raipur, Chhattisgarh 492015
+                <li className=' flex w-full items-center justify-center gap-2 text-xs'>
+                  <FontAwesomeIcon className='h-6 w-6' icon={faLocationDot} />
+                  LEVEL-4, LDC BUILDING, IBITF OFFICE, IIT BHILAI, <br /> Durg,
+                  Durg, Durg, Chattisgarh, India, 491001
                 </li>
               </ul>
             </div>
           </div>
-          {/* contact from */}
+          {/* contact form */}
           <div className='flex items-center justify-center rounded-lg p-4 md:ml-12 lg:h-[700px] lg:border lg:border-black'>
             <div className='px-2 md:px-1 xl:px-12'>
-              <p className='text-2xl font-bold text-gray-900 md:text-4xl'>
+              <p className='text-2xl font-bold text-primary md:text-4xl'>
                 Contact Us
               </p>
-              <p className='mt-4 text-lg text-primary'>
+              <p className='mt-4 text-lg text-gray-900'>
                 Our friendly team would love to hear from you.
               </p>
               <form

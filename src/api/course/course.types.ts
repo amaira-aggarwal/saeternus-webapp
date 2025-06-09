@@ -40,4 +40,6 @@ export interface CourseDetails {
   courseMeta: courseMeta[];
   keywords: string[];
   path: string;
+  enrolledCount: number; //currently enrolled
+  maxCapacity: number; //total seats available
 }

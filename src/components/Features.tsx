@@ -46,7 +46,7 @@ const features = [
 function Features() {
   return (
     <div className='bg-gray-100 py-3'>
-      <div className='container mx-auto px-4'>
+      <div className='container mx-auto px-4 pt-2'>
         <div className='grid grid-cols-1 gap-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7'>
           {features.map((feature, index) => (
             <div key={index} className='flex flex-col items-center text-center'>

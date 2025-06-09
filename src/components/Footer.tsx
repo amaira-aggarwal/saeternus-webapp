@@ -53,8 +53,8 @@ function Footer() {
               </Link>
               <div className='mt-4 text-sm text-black dark:text-gray-400'>
                 <h1 className='text-lg font-bold'>Office Address</h1>
-                <p>B-201, IBITF Office, IIT Bhilai, GEC Campus, Sejbahar,</p>
-                <p>Raipur, Chhattisgarh 492015</p>
+                <p>LEVEL-4, LDC BUILDING, IBITF OFFICE, IIT BHILAI,</p>
+                <p> Durg, Durg, Durg, Chattisgarh, India, 491001</p>
                 <p>CIN: U72900CT2022PTC013086</p>
                 <p>GSTN: 22ABICS3553L1Z5</p>
                 <p>Contact: +91 80049 16849</p>

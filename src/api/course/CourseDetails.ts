@@ -16,4 +16,6 @@ export interface CourseDetails {
   startDate: string;
   whatYouWillLearn: string[];
   courseMeta: courseMeta[];
+  enrolledCount: number; //currently enrolled
+  maxCapacity: number; //total seats available
 }

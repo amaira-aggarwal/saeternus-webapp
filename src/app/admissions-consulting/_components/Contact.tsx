@@ -48,8 +48,8 @@ const ContactPage: FC = () => {
         <div className='grid items-center justify-items-center gap-x-4 gap-y-10 lg:grid-cols-2'>
           <div className='hidden flex-col gap-10 md:ml-20 md:w-[550px] lg:block xl:ml-72 xl:w-5/6'>
             <div className='mb-20'>
-              <h1 className='text-7xl font-extrabold'>Connect with us</h1>
-              <p className='text-md mt-10 font-normal text-gray-600'>
+              <h1 className='text-6xl font-extrabold'>Connect with us</h1>
+              <p className='mt-10 text-lg font-normal text-gray-600'>
                 Your success is our success.{' '}
                 <span className='text-primary'>
                   We are committed to delivering innovative solutions and
@@ -59,15 +59,15 @@ const ContactPage: FC = () => {
               </p>
             </div>
             <div className='flex flex-col gap-3'>
-              <h2 className='mb-5 text-lg font-bold'>Socials</h2>
-              <ul className='font-regular flex flex-row items-center gap-10 text-sm'>
+              <h2 className='mb-5 text-2xl font-bold'>Socials</h2>
+              <ul className='font-regular flex flex-row items-center gap-10 text-lg'>
                 <li className='hover:text-primary'>
                   <a
                     href='https://x.com/saeternus_'
                     target='_blank'
                     className='flex items-center gap-1'
                   >
-                    <FontAwesomeIcon className='h-5 w-5' icon={faXTwitter} />
+                    <FontAwesomeIcon className='h-7 w-7' icon={faXTwitter} />
                     Twitter
                   </a>
                 </li>
@@ -77,7 +77,7 @@ const ContactPage: FC = () => {
                     target='_blank'
                     className='flex items-center gap-1'
                   >
-                    <FontAwesomeIcon className='h-5 w-5' icon={faInstagram} />
+                    <FontAwesomeIcon className='h-7 w-7' icon={faInstagram} />
                     Instagram
                   </a>
                 </li>
@@ -87,7 +87,7 @@ const ContactPage: FC = () => {
                     target='_blank'
                     className='flex items-center gap-1'
                   >
-                    <FontAwesomeIcon className='h-5 w-5' icon={faLinkedin} />
+                    <FontAwesomeIcon className='h-7 w-7' icon={faLinkedin} />
                     Linkedin
                   </a>
                 </li>
@@ -97,20 +97,20 @@ const ContactPage: FC = () => {
                     target='_blank'
                     className='flex items-center gap-1'
                   >
-                    <FontAwesomeIcon className='h-5 w-5' icon={faFacebook} />
+                    <FontAwesomeIcon className='h-7 w-7' icon={faFacebook} />
                     Facebook
                   </a>
                 </li>
               </ul>
             </div>
-            <div className='mt-36 text-xs font-semibold'>
+            <div className='mt-36 text-base font-semibold'>
               <ul className='flex flex-row gap-20'>
                 <li className='flex items-center justify-center gap-1'>
-                  <FontAwesomeIcon className='h-5 w-5' icon={faEnvelope} />
+                  <FontAwesomeIcon className='h-6 w-6' icon={faEnvelope} />
                   hello@saeternus.com
                 </li>
                 <li className='flex w-full items-center justify-center gap-2 break-normal'>
-                  <FontAwesomeIcon className='h-5 w-5' icon={faPhone} />
+                  <FontAwesomeIcon className='h-6 w-6' icon={faPhone} />
                   +91 8004916849
                 </li>
               </ul>

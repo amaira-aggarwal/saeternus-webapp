@@ -1,9 +1,11 @@
 /**
  * TODO: Implement API calls when backend is setup
  */
-
+import React, { useState, useEffect } from 'react';
 import { CourseDetails, CourseInfo } from './course.types';
 import { slugify } from '@/lib/utils';
+
+import { getNextWeekday, Weekday } from '../course/format';
 
 const courses: CourseInfo[] = [
   {
@@ -189,7 +191,7 @@ const detailedCourses: CourseDetails[] = [
       },
     ],
     relatedCourses: ['2', '5'],
-    startDate: '2025-05-29',
+    startDate: getNextWeekday(Weekday.Monday),
     whatYouWillLearn: [
       'Mastering React.js fundamentals',
       'Building reusable components',
@@ -268,6 +270,8 @@ const detailedCourses: CourseDetails[] = [
       'Geoinformatics',
       'GPS',
     ],
+    enrolledCount: 0,
+    maxCapacity: 0,
   },
   {
     courseId: '2',
@@ -377,7 +381,7 @@ const detailedCourses: CourseDetails[] = [
         description: 'Multiple Case Studies; Hands-on Practice.',
       },
     ],
-    startDate: '2025-05-30',
+    startDate: getNextWeekday(Weekday.Saturday),
     whatYouWillLearn: [
       'Descriptive Statistics - It includes methodologies such as cross-tabulation, frequencies, and descriptive ratio statistics.',
       'Bivariate Statistics - It includes methodologies such as means, nonparametric tests, correlation, and Analysis of Variance (ANOVA).',
@@ -491,6 +495,8 @@ const detailedCourses: CourseDetails[] = [
       'Multivariate Analysis',
       'Data Visualization',
     ],
+    enrolledCount: 0,
+    maxCapacity: 0,
   },
   {
     courseId: '3',
@@ -588,7 +594,7 @@ const detailedCourses: CourseDetails[] = [
       },
     ],
     relatedCourses: ['2', '5'],
-    startDate: '2025-07-20',
+    startDate: getNextWeekday(Weekday.Wednesday),
     whatYouWillLearn: [
       'Mastering React.js fundamentals',
       'Building reusable components',
@@ -662,6 +668,8 @@ const detailedCourses: CourseDetails[] = [
       'Data Modeling',
       'Feature Engineering',
     ],
+    enrolledCount: 0,
+    maxCapacity: 0,
   },
   {
     courseId: '4',
@@ -768,7 +776,7 @@ const detailedCourses: CourseDetails[] = [
       },
     ],
     relatedCourses: ['2', '5'],
-    startDate: '2025-05-29',
+    startDate: getNextWeekday(Weekday.Tuesday),
     whatYouWillLearn: [
       'Mastering React.js fundamentals',
       'Building reusable components',
@@ -854,6 +862,8 @@ const detailedCourses: CourseDetails[] = [
       'Geographical Information System',
       'Resolution',
     ],
+    enrolledCount: 0,
+    maxCapacity: 0,
   },
   {
     courseId: '5',
@@ -942,7 +952,7 @@ const detailedCourses: CourseDetails[] = [
       },
     ],
     relatedCourses: ['2', '5'],
-    startDate: '2025-05-31',
+    startDate: getNextWeekday(Weekday.Thursday),
     whatYouWillLearn: [
       'Mastering React.js fundamentals',
       'Building reusable components',
@@ -1061,6 +1071,8 @@ const detailedCourses: CourseDetails[] = [
       'Citations',
       'H-index',
     ],
+    enrolledCount: 0,
+    maxCapacity: 0,
   },
   {
     courseId: '6',
@@ -1145,7 +1157,7 @@ const detailedCourses: CourseDetails[] = [
       },
     ],
     relatedCourses: ['2', '5'],
-    startDate: '2025-05-24',
+    startDate: getNextWeekday(Weekday.Friday),
     whatYouWillLearn: [
       'Mastering React.js fundamentals',
       'Building reusable components',
@@ -1230,6 +1242,8 @@ const detailedCourses: CourseDetails[] = [
       'Research Ethics',
       'Scale Development Techniques',
     ],
+    enrolledCount: 0,
+    maxCapacity: 0,
   },
   {
     courseId: '7',
@@ -1295,7 +1309,7 @@ const detailedCourses: CourseDetails[] = [
       },
     ],
     relatedCourses: ['2', '5'],
-    startDate: '2025-06-15',
+    startDate: getNextWeekday(Weekday.Sunday),
     whatYouWillLearn: [
       'Mastering React.js fundamentals',
       'Building reusable components',
@@ -1384,6 +1398,8 @@ const detailedCourses: CourseDetails[] = [
       'Presentation',
       'Report Writing',
     ],
+    enrolledCount: 0,
+    maxCapacity: 0,
   },
 ];
 
