@@ -54,7 +54,7 @@ function Footer() {
               <div className='mt-4 text-sm text-black dark:text-gray-400'>
                 <h1 className='text-lg font-bold'>Office Address</h1>
                 <p>LEVEL-4, LDC BUILDING, IBITF OFFICE, IIT BHILAI,</p>
-                <p> Durg, Durg, Durg, Chattisgarh, India, 491001</p>
+                <p> Durg, Chattisgarh, India, 491001</p>
                 <p>CIN: U72900CT2022PTC013086</p>
                 <p>GSTN: 22ABICS3553L1Z5</p>
                 <p>Contact: +91 80049 16849</p>
@@ -151,9 +151,11 @@ function Footer() {
           </div>
         </MaxWidthWrapper>
         <hr className='my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8' />
-        <span className='block text-sm font-thin text-gray-500 dark:text-gray-400 sm:text-center'>
-          {new Date().getFullYear()} saeternus™ All Rights Reserved.
-        </span>
+        <div className='text-center sm:text-left'>
+          <span className='block text-sm font-thin text-gray-500 dark:text-gray-400 sm:text-center'>
+            {new Date().getFullYear()} saeternus™ All Rights Reserved.
+          </span>
+        </div>
       </div>
     </footer>
   );

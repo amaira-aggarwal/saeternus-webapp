@@ -17,6 +17,7 @@ export function sendEmail(data: ContactFormData | AdmissionsFormData) {
       subject: contactData.subject,
       message: contactData.message,
       route: '/contact-us',
+      captcha: (contactData as any).captcha,
     };
   } else if (currentPage === '/admissions-consulting') {
     const admissionsData = data as AdmissionsFormData;
@@ -26,9 +27,10 @@ export function sendEmail(data: ContactFormData | AdmissionsFormData) {
       number: admissionsData.number,
       program: admissionsData.program,
       route: '/admissions-consulting',
+      captcha: (admissionsData as any).captcha,
     };
   }
-
+  console.log('Data sent from utils/email.ts:', formDataToSend);
   fetch(apiEndpoint, {
     method: 'POST',
     headers: {

@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { satoshi } from '@/utils/customfonts';
 import { GoogleTagManager } from '@next/third-parties/google';
+import RecaptchaProvider from '@/components/RecaptchaProvider';
 
 const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
 const description = 'Transform your career with Saeternus';
@@ -41,9 +42,11 @@ export default function RootLayout({
           `${satoshi.variable} font-satoshi`
         )}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <RecaptchaProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </RecaptchaProvider>
       </body>
     </html>
   );

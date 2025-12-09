@@ -1,19 +1,21 @@
 'use client';
 import { useForm } from 'react-hook-form';
-import { FC } from 'react';
+import { FC, useState } from 'react'; // Removed useEffect
 import { sendEmail } from '@/utils/email';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebook,
   faLinkedin,
   faXTwitter,
+  faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
 import {
   faEnvelope,
   faLocationDot,
   faPhone,
 } from '@fortawesome/free-solid-svg-icons';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 export type FormData = {
   name: string;
@@ -22,27 +24,57 @@ export type FormData = {
   subject: string;
   message: string;
   route: string;
+  captcha?: string;
 };
 
 const ContactPage: FC = () => {
   const { register, handleSubmit } = useForm<FormData>();
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
-  function onSubmit(data: FormData) {
-    const emailData = {
-      name: data.name,
-      email: data.email,
-      number: data.number,
-      subject: data.subject,
-      message: data.message,
-      route: 'contact-us',
-    };
-    sendEmail(emailData);
+  // Optional: Loading state to prevent double clicks
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  async function onSubmit(data: FormData) {
+    // 1. Check if the hook is ready
+    if (!executeRecaptcha) {
+      console.error('Recaptcha not loaded');
+      return;
+    }
+
+    try {
+      // 2. Generate token ONLY on submit
+      const token = await executeRecaptcha('contact_form_submit');
+      console.log('Generated Token:', token);
+
+      if (!token) {
+        alert('Failed to generate captcha token');
+        return;
+      }
+      const emailData = {
+        name: data.name,
+        email: data.email,
+        number: data.number,
+        subject: data.subject,
+        message: data.message,
+        route: 'contact-us',
+        captcha: token, // Send fresh token
+      };
+
+      await sendEmail(emailData);
+
+      // Add success handling/alert here
+      alert('Message sent!');
+    } catch (error) {
+      console.error('Submission failed', error);
+    }
   }
 
   return (
     <div>
       <div className='max-w-8xl mx-auto py-12 md:py-24'>
+        {' '}
         <div className='grid items-center justify-items-center gap-x-4 gap-y-10 lg:grid-cols-2'>
+          {/* LEFT SIDE */}
           <div className='hidden flex-col gap-10 md:ml-20 md:w-[550px] lg:block xl:ml-72 xl:w-5/6'>
             <div className='mb-20'>
               <h1 className='text-7xl font-extrabold'>Let&apos;s Talk</h1>
@@ -55,6 +87,7 @@ const ContactPage: FC = () => {
                 Let us help you turn your vision into a reality.{' '}
               </p>
             </div>
+
             <div className='flex flex-col gap-3'>
               <h2 className='mb-5 text-2xl font-bold'>Socials</h2>
               <ul className='font-regular flex flex-row items-center gap-10 text-lg'>
@@ -85,7 +118,7 @@ const ContactPage: FC = () => {
                     className='flex items-center gap-1'
                   >
                     <FontAwesomeIcon className='h-7 w-7' icon={faLinkedin} />
-                    Linkedin
+                    LinkedIn
                   </a>
                 </li>
                 <li className='hover:text-primary'>
@@ -100,6 +133,7 @@ const ContactPage: FC = () => {
                 </li>
               </ul>
             </div>
+
             <div className='mt-36 text-base font-semibold'>
               <ul className='flex flex-row gap-10'>
                 <li className='flex items-center justify-center gap-1'>
@@ -110,15 +144,16 @@ const ContactPage: FC = () => {
                   <FontAwesomeIcon className='h-6 w-6' icon={faPhone} />
                   +91 8004916849
                 </li>
-                <li className=' flex w-full items-center justify-center gap-2 text-xs'>
+                <li className='flex w-full items-center justify-center gap-2 text-xs'>
                   <FontAwesomeIcon className='h-6 w-6' icon={faLocationDot} />
                   LEVEL-4, LDC BUILDING, IBITF OFFICE, IIT BHILAI, <br /> Durg,
-                  Durg, Durg, Chattisgarh, India, 491001
+                  Chattisgarh, India, 491001
                 </li>
               </ul>
             </div>
           </div>
-          {/* contact form */}
+
+          {/* Contact Form */}
           <div className='flex items-center justify-center rounded-lg p-4 md:ml-12 lg:h-[700px] lg:border lg:border-black'>
             <div className='px-2 md:px-1 xl:px-12'>
               <p className='text-2xl font-bold text-primary md:text-4xl'>
@@ -127,6 +162,7 @@ const ContactPage: FC = () => {
               <p className='mt-4 text-lg text-gray-900'>
                 Our friendly team would love to hear from you.
               </p>
+
               <form
                 onSubmit={handleSubmit((data) => {
                   onSubmit({ ...data, route: 'contact-us' });
@@ -189,6 +225,7 @@ const ContactPage: FC = () => {
                     {...register('number', { required: true })}
                   />
                 </div>
+
                 <div className='grid w-full items-center gap-1.5'>
                   <label
                     className='text-sm font-medium leading-none text-gray-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
@@ -221,11 +258,14 @@ const ContactPage: FC = () => {
                     {...register('message', { required: true })}
                   />
                 </div>
+
                 <button
                   type='submit'
+                  // Disable if submitting or if recaptcha library hasn't loaded yet
+                  disabled={isSubmitting || !executeRecaptcha}
                   className='text-md w-full rounded-md bg-primary px-3 py-2 font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black'
                 >
-                  Submit
+                  {isSubmitting ? 'Sending...' : 'Submit'}
                 </button>
               </form>
             </div>
