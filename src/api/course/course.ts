@@ -292,7 +292,7 @@ const detailedCourses: CourseDetails[] = [
         title: 'Introduction to Statistics & SPSS',
         day: 'Day 1',
         description:
-          'Why Study Statistics, Types of Data, Types of Variables, Types of Statistics, SPSS Environment: Data View & Variable View, Hands on Practice.',
+          'Why Study Statistics? Types of Data, Types of Variables, Types of Statistics, SPSS Environment: Data View & Variable View, Hands on Practice.',
       },
       {
         title: 'Descriptive Statistics',
@@ -307,68 +307,68 @@ const detailedCourses: CourseDetails[] = [
           'Hypothesis Testing: Null & Alternative Hypothesis; Errors in Hypothesis Testing; Normality Distribution (Discrete vs. Continuous); Measuring Normality (Graphical Methods, Skewness, Kurtosis, Kolmogorov-Smirnov Test, Shapiro-Wilk Test); Hands-on Practice.',
       },
       {
-        title: 'Parametric Tests-I',
+        title: 'Qualitative Data Analysis',
         day: 'Day 4',
+        description:
+          "Cross Tabulation; Chi-Square Test of Association; McNemar's Test; Kappa Statistics; Hands-on Practice.",
+      },
+      {
+        title: 'Correlation',
+        day: 'Day 5',
+        description:
+          'Pearson Correlation, Spearman Rank Correlation, Correlation Matrix; Hands-on Practice.',
+      },
+      {
+        title: 'Parametric Tests-I',
+        day: 'Day 6',
         description:
           'One Sample (Z-Test/Normal Test), Two Sample (Z-Test/Normal Test, Student t-Test, Modified t-Test), More Than Two Samples (Paired t-Test); Hands-on Practice.',
       },
       {
         title: 'Parametric Tests-II',
-        day: 'Day 5',
-        description:
-          'One Way ANOVA, Two Way ANOVA, One Way ANCOVA, Two Way ANCOVA, MANOVA, and MANCOVA; Hands-on Practice.',
-      },
-      {
-        title: 'Non-Parametric Tests-I',
-        day: 'Day 6',
-        description:
-          'Two Sample Non-Parametric Test: Mann Whitney U test, Two Paired Sample Non-Parametric Tests: Sign Test, Wilcoxon Signed Rank Test; Hands-on Practice.',
-      },
-      {
-        title: 'Non-Parametric Tests-II',
         day: 'Day 7',
         description:
-          'Kruskal-Wallis H Test, Friedman Test, Run Test, McNemar Test; Hands-on Practice.',
+          'One Way ANOVA, Two Way ANOVA, One Way MANOVA, Two Way MANOVA, One Way ANCOVA, Two Way ANCOVA, and MANCOVA; Hands-on Practice.',
       },
       {
-        title: 'Qualitative Data Analysis',
+        title: 'Non-Parametric Tests',
         day: 'Day 8',
         description:
-          'Cross Tabulation; Chi-Square Test of Association; Kappa Statistics; Hands-on Practice.',
+          'Two Sample Non-Parametric Test: Mann Whitney U test; Two Paired Sample Non-Parametric Tests: Wilcoxon Signed Rank Test; Kruskal-Wallis H Test; Friedman Test; Run Test; Hands on Practice',
       },
       {
-        title: 'Correlation',
+        title: 'Regression Analysis-I',
         day: 'Day 9',
         description:
-          'Pearson Correlation, Spearman Rank Correlation, Correlation Matrix; Hands-on Practice.',
+          'Regression and its types, Simple Regression; Hands-on Practice.',
       },
       {
-        title: ' Regression',
+        title: 'Regression Analysis-II',
         day: 'Day 10',
-        description:
-          'Simple Regression, Multiple Regression; Hands-on Practice.',
+        description: 'Multiple Regression; Hands-on Practice.',
       },
       {
         title: 'Logistic Regression',
         day: 'Day 11',
-        description: 'Bivariate, Ordinal; Hands-on Practice.',
+        description:
+          'Bivariate Logistic Regression, Multinomial Logistic Regression, Ordinal Logistic Regression; Hands-on Practice.',
+      },
+      {
+        title: 'Discriminant Analysis',
+        day: 'Day 12',
+        description: 'Discriminant Function Analysis; Hands-on Practice.',
       },
       {
         title: 'Cluster Analysis',
-        day: 'Day 12',
+        day: 'Day 13',
         description:
           'Hierarchical Clustering, K-Means Clustering; Hands-on Practice.',
       },
       {
         title: 'Principal Component & Factor Analysis',
-        day: 'Day 13',
+        day: 'Day 14',
         description:
           'Principal Component Analysis (PCA), Factor Analysis; Hands-on Practice.',
-      },
-      {
-        title: 'Discriminant Analysis',
-        day: 'Day 14',
-        description: 'Discriminant Function Analysis; Hands-on Practice.',
       },
       {
         title: 'Survival Analysis',
