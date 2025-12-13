@@ -61,9 +61,6 @@ const ContactPage: FC = () => {
       };
 
       await sendEmail(emailData);
-
-      // Add success handling/alert here
-      alert('Message sent!');
     } catch (error) {
       console.error('Submission failed', error);
     }
@@ -146,13 +143,12 @@ const ContactPage: FC = () => {
                 </li>
                 <li className='flex w-full items-center justify-center gap-2 text-xs'>
                   <FontAwesomeIcon className='h-6 w-6' icon={faLocationDot} />
-                  LEVEL-4, LDC BUILDING, IBITF OFFICE, IIT BHILAI, <br /> Durg,
+                  Level-4, LDC Building, IBITF Office, IIT Bhilai, <br /> Durg,
                   Chattisgarh, India, 491001
                 </li>
               </ul>
             </div>
           </div>
-
           {/* Contact Form */}
           <div className='flex items-center justify-center rounded-lg p-4 md:ml-12 lg:h-[700px] lg:border lg:border-black'>
             <div className='px-2 md:px-1 xl:px-12'>
@@ -162,7 +158,6 @@ const ContactPage: FC = () => {
               <p className='mt-4 text-lg text-gray-900'>
                 Our friendly team would love to hear from you.
               </p>
-
               <form
                 onSubmit={handleSubmit((data) => {
                   onSubmit({ ...data, route: 'contact-us' });
@@ -225,7 +220,6 @@ const ContactPage: FC = () => {
                     {...register('number', { required: true })}
                   />
                 </div>
-
                 <div className='grid w-full items-center gap-1.5'>
                   <label
                     className='text-sm font-medium leading-none text-gray-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
@@ -258,7 +252,6 @@ const ContactPage: FC = () => {
                     {...register('message', { required: true })}
                   />
                 </div>
-
                 <button
                   type='submit'
                   // Disable if submitting or if recaptcha library hasn't loaded yet

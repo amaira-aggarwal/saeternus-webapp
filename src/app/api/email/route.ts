@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
     (recaptchaResponse.score && recaptchaResponse.score < 0.5)
   ) {
     return NextResponse.json(
-      { status: 'error', message: 'reCAPTCHA failed. Bot detected.' },
+      { status: 'error', message: 'reCAPTCHA failed.' },
       { status: 400 }
     );
   }
@@ -78,14 +78,13 @@ export async function POST(request: NextRequest) {
     await sendMailPromise();
     return NextResponse.json({
       status: 'success',
-      message: 'Form submitted successfully. We will get back to you shortly.',
+      message: 'Message sent. We will get back to you shortly.',
     });
   } catch (err) {
     return NextResponse.json(
       {
         status: 'error',
-        message:
-          'There was an error submitting the form. Please try again later.',
+        message: 'There was an error submitting the form. Please try again.',
         error: err,
       },
       { status: 500 }
