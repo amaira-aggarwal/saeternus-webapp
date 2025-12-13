@@ -89,6 +89,9 @@ module.exports = {
         scroll:
           'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
       },
+      screens: {
+        xs: '740px', //  custom breakpoint
+      },
     },
   },
   plugins: [
