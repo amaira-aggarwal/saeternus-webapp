@@ -8,6 +8,7 @@ export interface CourseInfo {
   prevPrice?: string;
   currentPrice: string;
   path: string;
+  aliases?: string[];
 }
 
 export interface Lesson {
@@ -37,9 +38,10 @@ export interface CourseDetails {
   relatedCourses?: string[];
   startDate: string;
   whatYouWillLearn: string[];
-  courseMeta: courseMeta[];
+  courseMeta?: courseMeta[];
   keywords: string[];
   path: string;
+  aliases?: string[];
   enrolledCount: number; //currently enrolled
   maxCapacity: number; //total seats available
 }

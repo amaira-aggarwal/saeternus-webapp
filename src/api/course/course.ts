@@ -1,6 +1,3 @@
-/**
- * TODO: Implement API calls when backend is setup
- */
 import React, { useState, useEffect } from 'react';
 import { CourseDetails, CourseInfo } from './course.types';
 import { slugify } from '@/lib/utils';
@@ -51,28 +48,6 @@ const courses: CourseInfo[] = [
   },
   {
     courseId: '5',
-    title: 'Research Methodology - Research Design and Writing',
-    header:
-      'Certificate Course in Research Methodology - Research Design and Writing',
-    image: '/assets/ResearchDesignWriting.png',
-    tags: ['Research Methodology', 'Writing'],
-    prevPrice: '₹8,200',
-    currentPrice: '₹2,950',
-    path: 'research-methodology-research-design-and-writing',
-  },
-  {
-    courseId: '6',
-    title: 'Research Methodology Data Collection and Analysis',
-    header:
-      'Certificate Course in Research Methodology - Data Collection and Analysis',
-    image: '/assets/ResearchMethodology.png',
-    tags: ['Research Methodology', 'Analysis'],
-    prevPrice: '₹8,200',
-    currentPrice: '₹2,950',
-    path: 'research-methodology-data-collection-and-analysis',
-  },
-  {
-    courseId: '7',
     title: 'Remote Sensing and GIS Project',
     header: 'Research Project in Remote Sensing and GIS',
     image: '/assets/RemoteSensingGIS.png',
@@ -80,6 +55,20 @@ const courses: CourseInfo[] = [
     prevPrice: '₹9,600',
     currentPrice: '₹2,596',
     path: 'remote-sensing-gis-project',
+  },
+  {
+    courseId: '6',
+    title: 'Research Methodology Integrated with AI',
+    header: 'Certificate Course in Research Methodology Integrated with AI',
+    image: '/assets/ResearchDesignWriting.png',
+    tags: ['Research Methodology', 'AI', 'Project'],
+    prevPrice: '₹8,200',
+    currentPrice: '₹2,950',
+    path: 'research-methodology-integrated-with-ai',
+    aliases: [
+      'research-methodology-data-collection-and-analysis',
+      'research-methodology-research-design-and-writing',
+    ],
   },
 ];
 
@@ -867,386 +856,6 @@ const detailedCourses: CourseDetails[] = [
   },
   {
     courseId: '5',
-    title:
-      'Certificate Course in Research Methodology - Research Design and Writing',
-    description:
-      'Embark on a transformative journey into the realm of research methodology. From laying the groundwork with fundamentals and diverse methodologies to navigating the intricacies of formulating hypotheses and writing impactful papers, each class unfolds a new chapter. Delve into practical insights, enhance your writing skills, and master the art of effective presentations. Join us to foster your passion for research and equip yourself with the tools needed for scholarly success.',
-    image: '/assets/ResearchDesignWriting.png',
-    tags: ['Research Methodology', 'Writing'],
-    prevPrice: '₹8,200',
-    currentPrice: '₹2,950',
-    whatsapp: 'https://chat.whatsapp.com/HLFjC7Usbs12NDdY0pR1fV',
-    contact: '9450906849',
-    formLink: 'https://forms.gle/EcBkBU18eM3o96S38',
-    path: 'research-methodology-research-design-and-writing',
-    lessons: [
-      {
-        title: 'Fundamentals of Research',
-        day: 'Day 1',
-        description:
-          'Importance & Scope; Research: Meaning, Types, Objectives, Characteristics; Positivism and Post Positivism to Research; Introducing the Idea of Research in Social Sciences; Limitation of Research',
-      },
-      {
-        title: 'Research Design',
-        day: 'Day 2',
-        description:
-          'Research Process; Research Designs and Variables; Vectoring and Examples',
-      },
-      {
-        title: 'Research Techniques',
-        day: 'Day 3',
-        description: 'Various Methods and Techniques of Research.',
-      },
-      {
-        title: 'Research Problem',
-        day: 'Day 4',
-        description:
-          'Formulation of Research Problem; Articulating your Synopsis; How to map the thesis to a claim?',
-      },
-      {
-        title: 'Hypothesis Formulation',
-        day: 'Day 5',
-        description:
-          'Concepts, Types, Sources; Characteristics of a Good Hypothesis; Hypothesis testing and Evaluation Design',
-      },
-      {
-        title: 'Literature Review',
-        day: 'Day 6',
-        description:
-          'How to read a research paper?; Review of Literature; Referencing System',
-      },
-      {
-        title: 'Content Writing I',
-        day: 'Day 7',
-        description:
-          'Precaution in Preparing the Research Report; The Mechanics of Writing: Report, Dissertation, Thesis; Index/Content, Appendix, Footnotes, Endnotes, Use of Diacritical Marks',
-      },
-      {
-        title: 'Content Writing II',
-        day: 'Day 8',
-        description:
-          'Quotation, Citation, Bibliographical References; Drawing Conclusion, Giving Suggestions and Recommendations; Claims and Implied Evaluation',
-      },
-      {
-        title: 'Content Writing III',
-        day: 'Day 9',
-        description:
-          'Writing Abstract, Book Review, Content Writing; Writing and Editing Research Papers; How to Avoid Plagiarism',
-      },
-      {
-        title: 'Research Proposal',
-        day: 'Day 10',
-        description:
-          'Formulation of Research Proposal; How to Ask for Funding/Collaboration?; How to Give a Presentation',
-      },
-      {
-        title: 'Paper Formatting',
-        day: 'Day 11',
-        description: 'Writing Well-Formatted Papers: LATEX and Overleaf',
-      },
-      {
-        title: 'Use of Internet in Research',
-        day: 'Day 12',
-        description:
-          'Email, Google Scholar, Interaction through Social Networking and Other Channels; How to Showcase your Work on the Web?; Understanding Impact Factor, Citations, H-index etc.',
-      },
-    ],
-    relatedCourses: ['2', '5'],
-    startDate: getNextWeekday(Weekday.Thursday),
-    whatYouWillLearn: [
-      'Mastering React.js fundamentals',
-      'Building reusable components',
-      'Managing state and props efficiently',
-      'Implementing routing and navigation',
-      'Exploring advanced React features like Hooks and Context API',
-    ],
-    courseMeta: [
-      {
-        title: 'Duration',
-        description: '6 weeks',
-        image: '/assets/react-duration.png',
-      },
-      {
-        title: 'Level',
-        description: 'Beginner',
-        image: '/assets/intermediate-level.png',
-      },
-      {
-        title: 'Certification',
-        description: 'Upon successful completion',
-        image: '/assets/certification.png',
-      },
-      {
-        title: 'Language',
-        description: 'English and Hindi',
-        image: '/assets/instructor.png',
-      },
-      {
-        title: 'Instructor',
-        description: 'Leading industry experts',
-        image: '/assets/instructor.png',
-      },
-      {
-        title: 'Prerequisites',
-        description: 'No prerequisites required',
-        image: '/assets/prerequisites.png',
-      },
-      {
-        title: 'Projects',
-        description: 'Hands-on projects to reinforce learning concepts',
-        image: '/assets/projects.png',
-      },
-      {
-        title: 'Community',
-        description:
-          'Access to an exclusive online community for discussions and support',
-        image: '/assets/community.png',
-      },
-    ],
-    keywords: [
-      'Research Methodology',
-      'Research Scope',
-      'Research Objectives',
-      'Philosophical Approaches',
-      'Positivism',
-      'Post Positivism',
-      'Research in Social Sciences',
-      'Limitations of Research',
-      'Research Design',
-      'Writing',
-      'Research Process',
-      'Variables',
-      'Research Techniques',
-      'Research Problem',
-      'Hypothesis Testing',
-      'Evaluation Design',
-      'Literature Review',
-      'Hypothesis Formulation',
-      'Referencing Systems', // Combined referencing terms
-      'Content Writing',
-      'Research Report',
-      'Mechanics of Writing',
-      'Academic Writing Formats', // Combined report terms
-      'Report',
-      'Dissertation',
-      'Thesis',
-      'Formatting Elements', // Combined index/content terms
-      'Index/Content',
-      'Appendix',
-      'Citations and Notes',
-      'Footnotes',
-      'Endnotes',
-      'Use of Diacritical Marks',
-      'Quotation',
-      'Citation',
-      'Bibliographical References',
-      'Drawing Conclusions',
-      'Giving Suggestions and Recommendations',
-      'Abstract',
-      'Book Review',
-      'Plagiarism',
-      'Research Proposal',
-      'Thesis Writing',
-      'Academic Writing',
-      'Scientific Writing',
-      'Research Ethics',
-      'Project Planning',
-      'Data Analysis',
-      'Peer Review',
-      'Citation Management',
-      'Plagiarism Avoidance',
-      'Presentation Skills',
-      'Presentation',
-      'Paper Formatting',
-      'Software for Research',
-      'LATEX',
-      'Overleaf',
-      'Research Resources',
-      'Email',
-      'Google Scholar',
-      'Academic Networking',
-      'Social Networking',
-      'Research Impact',
-      'Impact Factor',
-      'Citations',
-      'H-index',
-    ],
-    enrolledCount: 0,
-    maxCapacity: 0,
-  },
-  {
-    courseId: '6',
-    title:
-      'Certificate Course in Research Methodology - Data Collection and Analysis',
-    description:
-      'Join us to master the intricacies of data collection and analysis in research. Explore the qualities of a researcher, delve into sampling techniques, and design effective questionnaires. Get hands-on with data preprocessing, Python-based exploratory data analysis, and visualization. This course is tailored for students eager to enhance their skills in collecting, processing, and analyzing data for impactful research.',
-    image: '/assets/ResearchMethodology.png',
-    tags: ['Research Methodology', 'Analysis'],
-    prevPrice: '₹8,200',
-    currentPrice: '₹2,950',
-    whatsapp: 'https://chat.whatsapp.com/HLFjC7Usbs12NDdY0pR1fV',
-    contact: '9450906849',
-    formLink: 'https://forms.gle/waNVN81LwwTR5Mwh8',
-    path: 'research-methodology-data-collection-and-analysis',
-    lessons: [
-      {
-        title: 'Qualities of Researcher',
-        day: 'Day 1',
-        description:
-          'Attitude Measuring and Observation; Importance of Velocity; Preparing your Elevator Pitch',
-      },
-      {
-        title: 'Sampling Design Techniques',
-        day: 'Day 2',
-        description:
-          'Concepts and Types; Selection of Suitable Sampling Techniques; Sampling Size Decision; Sampling Error',
-      },
-      {
-        title: 'Data Types and Sources',
-        day: 'Day 3',
-        description:
-          'Primary and Secondary; Application of Sampling in various types; User Study',
-      },
-      {
-        title: 'Data Collection',
-        day: 'Day 4',
-        description: 'Designing Questionnaire/Interview Schedule',
-      },
-      {
-        title: 'Data Preprocessing',
-        day: 'Day 5',
-        description:
-          'Data Preparation, Tabulation, Coding and Editing; Graphical Representation and Mapping',
-      },
-      {
-        title: 'Introduction to Python',
-        day: 'Day 6',
-        description:
-          'Exploratory Data Analysis with Python; Handling Large Excel and CSV files Using Open Street Maps',
-      },
-      {
-        title: 'More Python concepts',
-        day: 'Day 7',
-        description: 'Data Analysis and Visualisation with Python.',
-      },
-      {
-        title: 'Remote Sensing',
-        day: 'Day 8',
-        description: 'Application of Remote Sensing in Research.',
-      },
-      {
-        title: 'Geographical Information System',
-        day: 'Day 9',
-        description: 'Application of GIS in Research.',
-      },
-      {
-        title: 'Statistical Techniques',
-        day: 'Day 10',
-        description: 'Use of Statistical Techniques in Research.',
-      },
-      {
-        title: 'Statistical Package In Social Sciences',
-        day: 'Day 11',
-        description: 'Data Analysis and Visualisation with SPSS.',
-      },
-      {
-        title: 'Scale Techniques',
-        day: 'Day 12',
-        description:
-          'Concepts, Types, Rating and Ranking Scale; Scale Construction Techniques; Multidimensional Scaling.',
-      },
-    ],
-    relatedCourses: ['2', '5'],
-    startDate: getNextWeekday(Weekday.Friday),
-    whatYouWillLearn: [
-      'Mastering React.js fundamentals',
-      'Building reusable components',
-      'Managing state and props efficiently',
-      'Implementing routing and navigation',
-      'Exploring advanced React features like Hooks and Context API',
-    ],
-    courseMeta: [
-      {
-        title: 'Duration',
-        description: '6 weeks',
-        image: '/assets/react-duration.png',
-      },
-      {
-        title: 'Level',
-        description: 'Beginner',
-        image: '/assets/intermediate-level.png',
-      },
-      {
-        title: 'Certification',
-        description: 'Upon successful completion',
-        image: '/assets/certification.png',
-      },
-      {
-        title: 'Language',
-        description: 'English and Hindi',
-        image: '/assets/instructor.png',
-      },
-      {
-        title: 'Instructor',
-        description: 'Leading industry experts',
-        image: '/assets/instructor.png',
-      },
-      {
-        title: 'Prerequisites',
-        description: 'No prerequisites required',
-        image: '/assets/prerequisites.png',
-      },
-      {
-        title: 'Projects',
-        description: 'Hands-on projects to reinforce learning concepts',
-        image: '/assets/projects.png',
-      },
-      {
-        title: 'Community',
-        description:
-          'Access to an exclusive online community for discussions and support',
-        image: '/assets/community.png',
-      },
-    ],
-    keywords: [
-      'Research Methodology',
-      'Data Collection',
-      'Data Analysis',
-      'Sampling Techniques',
-      'Elevator Pitch',
-      'Sampling Design Techniques',
-      'Sampling Size',
-      'Sampling Error',
-      'Data Types',
-      'Data Sources',
-      'Questionnaire Design',
-      'Data Preprocessing',
-      'Interview Schedule',
-      'Data Tabulation',
-      'Data Coding',
-      'Data Editing',
-      'Data Visualization',
-      'Mapping',
-      'Python',
-      'Remote Sensing',
-      'GIS',
-      'Data Analysis',
-      'Statistical Techniques',
-      'SPSS',
-      'Statistical Analysis',
-      'Survey Design',
-      'Data Interpretation',
-      'Quantitative Research',
-      'Qualitative Research',
-      'Data Management',
-      'Research Ethics',
-      'Scale Development Techniques',
-    ],
-    enrolledCount: 0,
-    maxCapacity: 0,
-  },
-  {
-    courseId: '7',
     title: 'Research Project in Remote Sensing and GIS',
     description:
       'Join us to work on your very own research project or pick from one of our ideas that aligns with your interests. This will involve working with our experts to apply your Remote Sensing and GIS skills to real world case studies. In the end, you get an opportunity to publish a research paper!',
@@ -1401,6 +1010,221 @@ const detailedCourses: CourseDetails[] = [
     enrolledCount: 0,
     maxCapacity: 0,
   },
+  {
+    courseId: '6',
+    title: 'Research Methodology integrated with AI',
+    description:
+      'Join us to design and execute your own research project using AI powered tools and expert guidance to solve real world problems and produce a complete publication ready research paper.',
+    image: '/assets/ResearchDesignWriting.png',
+    tags: ['Research Methodology', 'AI', 'Project'],
+    prevPrice: '₹8,200',
+    currentPrice: '₹2,950',
+    whatsapp: 'https://chat.whatsapp.com/HLFjC7Usbs12NDdY0pR1fV',
+    contact: '9450906849',
+    formLink: 'https://forms.gle/EcBkBU18eM3o96S38',
+    path: 'research-methodology-integrated-with-ai',
+    aliases: [
+      'research-methodology-data-collection-and-analysis',
+      'research-methodology-research-design-and-writing',
+    ],
+    lessons: [
+      {
+        title: 'Introduction to Research and AI in Research',
+        description:
+          'Introduction to research fundamentals and how AI transforms modern research, with hands-on activities to classify research types, critique topics, and understand AI bias and ethics.',
+        day: 'Day 1',
+      },
+      {
+        title: 'Research Problem Formulation with AI',
+        description:
+          'Learn to identify and refine research problems, using AI to narrow broad topics, discover research gaps, and convert questions into testable hypotheses.',
+        day: 'Day 2',
+      },
+      {
+        title: 'Hypothesis Building and Variable Identification',
+        description:
+          'Focus on building clear hypotheses and identifying variables, while AI tools generate alternative hypotheses, extract variables, and critique clarity and logic.',
+        day: 'Day 3',
+      },
+      {
+        title: 'Literature Review using AI',
+        description:
+          'Covers effective literature review techniques, with AI assisting in summarising papers, identifying methods and gaps, and creating annotated bibliographies.',
+        day: 'Day 4',
+      },
+      {
+        title: 'Sampling, Data Types and Study Design',
+        description:
+          'Introduces sampling techniques, data types, and study design, supported by AI to suggest sampling methods, generate synthetic data, and simulate sampling errors.',
+        day: 'Day 5',
+      },
+      {
+        title: 'Designing Surveys, Questionnaires and Interviews with AI',
+        description:
+          'Design unbiased surveys, questionnaires, and interviews, using AI to rewrite questions, generate Likert scales, and simulate interview practice.',
+        day: 'Day 6',
+      },
+      {
+        title: 'AI Assisted Observation and Field Notes',
+        description:
+          'Explores observation methods and qualitative analysis, with AI extracting themes, performing sentiment analysis, and generating codes from field notes.',
+        day: 'Day 7',
+      },
+      {
+        title: 'Data Preprocessing with AI',
+        description:
+          'Focuses on data preprocessing, where AI helps detect anomalies, handle missing data, clean datasets, and categorise qualitative responses.',
+        day: 'Day 8',
+      },
+      {
+        title: 'Python for Research and AI Code Generation',
+        description:
+          'Introduces Python for research and EDA, with AI generating scripts, debugging errors, and creating visualisations from research data.',
+        day: 'Day 9',
+      },
+      {
+        title: 'Mapping and Visualisation with AI',
+        description:
+          'Covers data mapping and visualisation, using AI to generate map-based visuals, interpret charts, and suggest more effective visual representations.',
+        day: 'Day 10',
+      },
+      {
+        title: 'Writing Research Reports with AI',
+        description:
+          'Guides students in writing research reports, where AI improves clarity and academic tone, generates citations, and supports ethical paraphrasing.',
+        day: 'Day 11',
+      },
+      {
+        title:
+          'Research Proposals, Book Reviews, Networking & Email Writing with AI',
+        description:
+          'Concludes with proposal writing, book reviews, professional communication, and research networking, using AI to draft, critique, refine, and present research work effectively.',
+        day: 'Day 12',
+      },
+    ],
+    relatedCourses: ['2', '5'],
+    startDate: getNextWeekday(Weekday.Friday),
+    whatYouWillLearn: [
+      'End-to-end research methodology, from problem formulation to final report writing, integrated with real academic standards.',
+      'Practical use of AI tools to identify research gaps, build hypotheses, review literature, and improve research quality ethically.',
+      'Data handling and analysis skills, including sampling, preprocessing, Python-based EDA, and visualization.',
+      'Academic writing and communication mastery, covering proposals, reports, citations, emails, and plagiarism-free paraphrasing.',
+      'Ability to apply AI critically and responsibly in research, understanding bias, limitations, ethics, and best practices.',
+    ],
+    courseMeta: [
+      {
+        title: 'Duration',
+        description: '12 weeks',
+        image: '/assets/react-duration.png',
+      },
+      {
+        title: 'Level',
+        description: 'Beginner',
+        image: '/assets/intermediate-level.png',
+      },
+      {
+        title: 'Certification',
+        description: 'Upon successful completion',
+        image: '/assets/certification.png',
+      },
+      {
+        title: 'Language',
+        description: 'English and Hindi',
+        image: '/assets/instructor.png',
+      },
+      {
+        title: 'Instructor',
+        description: 'Leading industry experts',
+        image: '/assets/instructor.png',
+      },
+      {
+        title: 'Prerequisites',
+        description: 'No prerequisites required',
+        image: '/assets/prerequisites.png',
+      },
+      {
+        title: 'Projects',
+        description: 'Hands-on projects to reinforce learning concepts',
+        image: '/assets/projects.png',
+      },
+      {
+        title: 'Community',
+        description:
+          'Access to an exclusive online community for discussions and support',
+        image: '/assets/community.png',
+      },
+    ],
+    keywords: [
+      'Research Methodology',
+      'Research Scope',
+      'Research Objectives',
+      'Philosophical Approaches',
+      'Positivism',
+      'Post Positivism',
+      'Research in Social Sciences',
+      'Limitations of Research',
+      'Research Design',
+      'Writing',
+      'Research Process',
+      'Variables',
+      'Research Techniques',
+      'Research Problem',
+      'Hypothesis Testing',
+      'Evaluation Design',
+      'Literature Review',
+      'Hypothesis Formulation',
+      'Referencing Systems', // Combined referencing terms
+      'Content Writing',
+      'Research Report',
+      'Mechanics of Writing',
+      'Academic Writing Formats', // Combined report terms
+      'Report',
+      'Dissertation',
+      'Thesis',
+      'Formatting Elements', // Combined index/content terms
+      'Index/Content',
+      'Appendix',
+      'Citations and Notes',
+      'Footnotes',
+      'Endnotes',
+      'Use of Diacritical Marks',
+      'Quotation',
+      'Citation',
+      'Bibliographical References',
+      'Drawing Conclusions',
+      'Giving Suggestions and Recommendations',
+      'Abstract',
+      'Book Review',
+      'Plagiarism',
+      'Research Proposal',
+      'Thesis Writing',
+      'Academic Writing',
+      'Scientific Writing',
+      'Research Ethics',
+      'Project Planning',
+      'Data Analysis',
+      'Peer Review',
+      'Citation Management',
+      'Plagiarism Avoidance',
+      'Presentation Skills',
+      'Presentation',
+      'Paper Formatting',
+      'Software for Research',
+      'LATEX',
+      'Overleaf',
+      'Research Resources',
+      'Email',
+      'Google Scholar',
+      'Academic Networking',
+      'Social Networking',
+      'Research Impact',
+      'Impact Factor',
+      'Citations',
+      'H-index',
+    ],
+    enrolledCount: 0,
+    maxCapacity: 0,
+  },
 ];
 
 export function getAllCourses() {
@@ -1422,7 +1246,13 @@ export function getCourseByTitle(title: string): CourseDetails | undefined {
   );
   return course;
 }
-export function getCourseByPath(path: string): CourseDetails | undefined {
-  const course = detailedCourses.find((course) => course.path === path);
+export function getCourseByPath(
+  pathSegment: string
+): CourseDetails | undefined {
+  const course = detailedCourses.find((course) => {
+    const matchesPath = course.path === pathSegment;
+    const matchesAlias = course.aliases?.includes(pathSegment);
+    return matchesPath || matchesAlias;
+  });
   return course;
 }

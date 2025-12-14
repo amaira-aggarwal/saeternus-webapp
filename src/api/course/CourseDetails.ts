@@ -6,6 +6,8 @@ export interface CourseDetails {
   description: string;
   image?: string;
   tags?: string[];
+  path: string;
+  aliases?: string[];
   prevPrice?: string;
   currentPrice: string;
   whatsapp: string;
@@ -15,7 +17,7 @@ export interface CourseDetails {
   relatedCourses?: string[];
   startDate: string;
   whatYouWillLearn: string[];
-  courseMeta: courseMeta[];
+  courseMeta?: courseMeta[];
   enrolledCount: number; //currently enrolled
   maxCapacity: number; //total seats available
 }

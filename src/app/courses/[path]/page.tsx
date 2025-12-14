@@ -13,6 +13,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+// import CourseEnrollment from '@/api/course/enrolled';
+// import { getNextWeekday } from '@/api/course/format';
+// import AnimatedProgressBar from '@/components/ui/progress-bar';
 
 const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -36,7 +39,7 @@ export async function generateMetadata({
     openGraph: {
       title: `${course.title} - Saeternus`,
       description: course.description,
-      url: `${baseURL}/courses/${slugify(course.path)}`,
+      url: `${baseURL}/courses/${course.path}`,
       images: [
         {
           url: `${baseURL}/android-chrome-192x192.png`,
@@ -47,9 +50,11 @@ export async function generateMetadata({
 }
 
 export default async function Page({ params }: { params: { path: string } }) {
-  const course: CourseDetails | undefined = await getCourseByPath(
-    slugify(params.path)
-  );
+  const course: CourseDetails | undefined = await getCourseByPath(params.path);
+  // if (course) {
+  //   course.enrolledCount = course.enrolledCount || 10; // Default enrolled students
+  //   course.maxCapacity = course.maxCapacity || 15; // Default total available seats
+  // }
 
   return (
     <MaxWidthWrapper className='mt-12 flex flex-col items-center justify-center'>
@@ -79,40 +84,44 @@ export default async function Page({ params }: { params: { path: string } }) {
               </div>
               <div className='flex w-full flex-col justify-between sm:flex-row'>
                 <div className='flex items-center justify-start gap-2'>
-                  <div className='flex h-full items-center justify-center'>
-                    <span className='align-top text-gray-500 line-through'>
-                      {course.prevPrice}
-                    </span>
-                    <span className='text-2xl font-bold text-primary'>
-                      {course.currentPrice}
-                    </span>
+                  <div className='flex flex-wrap items-center gap-4'>
+                    <div className='flex flex-col gap-2 md:flex-row md:items-center'>
+                      <div className='flex items-center gap-2'>
+                        <span className='align-top text-gray-500 line-through'>
+                          {course.prevPrice}
+                        </span>
+                        <span className='text-2xl font-bold text-primary'>
+                          {course.currentPrice}
+                        </span>
+                      </div>
+                      <Link
+                        className={
+                          buttonVariants({ size: 'lg' }) +
+                          ' px-4 py-2 text-sm md:px-6 md:py-3 md:text-base'
+                        }
+                        href={course.formLink}
+                        target='_blank'
+                      >
+                        Register Now!
+                      </Link>
+                      <Link
+                        className={
+                          buttonVariants({ size: 'lg' }) +
+                          ' flex items-center gap-2 px-4 py-2 text-sm md:px-6 md:py-3 md:text-base'
+                        }
+                        href={course.whatsapp}
+                        target='_blank'
+                      >
+                        Join WhatsApp Group
+                        <Image
+                          src='/assets/whatsapp.png'
+                          alt='whatsapp logo'
+                          width={20}
+                          height={20}
+                        />
+                      </Link>
+                    </div>
                   </div>
-                  <Link
-                    className={buttonVariants({
-                      size: 'lg',
-                    })}
-                    href={`${course.formLink}`}
-                    target='_blank'
-                  >
-                    Register Now!
-                  </Link>
-                  <Link
-                    className={buttonVariants({
-                      size: 'lg',
-                    })}
-                    href={`${course.whatsapp}`}
-                    target='_blank'
-                  >
-                    Join WhatsApp Group{' '}
-                    <span>
-                      <Image
-                        src={'/assets/whatsapp.png'}
-                        alt='whatsapp logo'
-                        width={30}
-                        height={30}
-                      />
-                    </span>
-                  </Link>
                 </div>
                 <div className='flex flex-col items-start justify-center gap-5 py-4 sm:flex-row'>
                   <div className='flex flex-col'>
@@ -122,39 +131,26 @@ export default async function Page({ params }: { params: { path: string } }) {
                     <span> {course.startDate}</span>
                   </div>
                   <div>
-                    <div>For more info contact {course.contact}</div>
-
-                    {/* <div>
-                      or join{' '}
-                      <a
-                        href={course.whatsapp}
-                        target='_blank'
-                        className='inline-flex items-center gap-1 text-primary underline '
-                      >
-                        Whatsapp Group{' '}
-                        <span>
-                          <Image
-                            src={'/assets/whatsapp.png'}
-                            alt='whatsapp logo'
-                            width={25}
-                            height={25}
-                          />
-                        </span>
-                      </a>
-                    </div> */}
+                    <div>
+                      For more info contact{' '}
+                      <strong className='text-primary underline'>
+                        {course.contact}
+                      </strong>
+                    </div>
                   </div>
                 </div>
               </div>
+              {/* for below buttons add code here */}
+              {/* <AnimatedProgressBar percentage={92} height='h-6' /> */}
             </div>
           </div>
           <div className='content w-full'>
             <h2 className='mb-8 max-w-3xl text-3xl font-bold md:text-4xl lg:text-5xl'>
               What will you <span className='text-primary'>learn</span>?
             </h2>
-
             <div className='lesson flex w-full flex-col justify-between gap-2 sm:flex-row-reverse'>
               <div className='meta flex flex-wrap gap-2 sm:mb-2 sm:block'>
-                {course.courseMeta.map((meta) => {
+                {course.courseMeta?.map((meta) => {
                   return (
                     <div
                       key={meta.title}
